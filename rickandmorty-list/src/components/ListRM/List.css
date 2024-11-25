@@ -1,0 +1,85 @@
+/* HarryPotterCharacters.css */
+
+/* Container for the component */
+.rick-and-morty {
+    padding: 20px;
+}
+
+.rick-and-morty__title {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 50px;
+    font-family: 'Garamond', serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow:
+        0 0 5px #3399ff,
+        /* Soft blue glow */
+        0 0 10px #3399ff,
+        /* Blue glow */
+        0 0 15px #0066cc,
+        /* Deeper blue glow */
+        0 0 20px #0066cc;
+    /* Soft glow effect */
+}
+
+/* Grid container for the cards */
+.rick-and-morty__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Style for each grid item (character card) */
+.rick-and-morty__grid-item {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+    /* Set max width for each character card */
+}
+
+/* Style for the Paper component (card) */
+.rick-and-morty__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure images fit properly inside the cards */
+.rick-and-morty__image {
+    width: 100%;
+    /* Make image width 100% of the card */
+    height: auto;
+    /* Maintain aspect ratio */
+    max-height: 250px;
+    /* Limit the height */
+    object-fit: cover;
+    /* Ensure images cover the space without distortion */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Style for character name */
+.rick-and-morty__name {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;  /* White text color for contrast */
+  
+    /* Subtle text shadow for a slight glowing effect */
+    text-shadow: 0 0 5px #3399ff, 0 0 10px #3399ff;
+  
+    /* A smooth transition effect for hover state */
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover effect to make it interactive */
+  .rick-and-morty__name:hover {
+    color: black;  /* Change to a golden color when hovered */
+    transform: scale(1.05);  /* Slight scaling effect for emphasis */
+  }

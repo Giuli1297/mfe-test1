@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Typography, Container } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './mainContent.css';
 
@@ -19,7 +19,7 @@ const MainContent = () => {
                     variant="contained"
                     color="primary"
                     className="series-characters__button series-characters__button--harry-potter"
-                    component={Link}
+                    component={RouterLink}
                     to="/harrypotter"
                 >
                     Harry Potter
@@ -28,7 +28,7 @@ const MainContent = () => {
                     variant="contained"
                     color="secondary"
                     className="series-characters__button series-characters__button--rick-and-morty"
-                    component={Link}
+                    component={RouterLink}
                     to="/rickandmorty"
                 >
                     Rick & Morty

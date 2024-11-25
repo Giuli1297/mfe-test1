@@ -1,4 +1,5 @@
 const {merge} = require('webpack-merge');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const commonConfig = require('./webpack.common.js');
 const packageJson = require('../package.json');
@@ -6,20 +7,23 @@ const packageJson = require('../package.json');
 const devConfig = {
     mode: 'development',
     output: {
-        publicPath: 'http://localhost:8080/'
+        publicPath: 'http://localhost:8082/'
     },
     devServer: {
-        port: 8080,
+        port: 8082,
         historyApiFallback: true
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'container',
-            remotes: {
-                harrypotter: 'harrypotter@http://localhost:8081/remoteEntry.js',
-                rickandmorty: 'rickandmorty@http://localhost:8082/remoteEntry.js',
+            name: 'rickandmorty',
+            filename: 'remoteEntry.js',
+            exposes: {
+                './RickandmortyApp': './src/bootstrap'
             },
             shared: packageJson.dependencies
+        }),
+        new HtmlWebpackPlugin({
+            template: './public/index.html'
         })
     ]
 };

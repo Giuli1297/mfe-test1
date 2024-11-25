@@ -10,6 +10,7 @@ import ProgressBar from "./components/ProgressBar/ProgressBar";
 import MainContent from "./components/mainContent/mainContent";
 
 const HarrypotterApp = lazy(() => import('./components/HarrypotterApp/HarrypotterApp'));
+const RickandmortyApp = lazy(() => import('./components/RickandmortyApp/RickandmortyApp'));
 
 const generateClassName = createGenerateClassName({
     productionPrefix: 'co'
@@ -24,14 +25,11 @@ export default () => {
                 <Router history={history}>
                     <div>
                         <Header/>
-                        <Suspense fallback={<ProgressBar/>}>
+                        <Suspense fallback={<ProgressBar />}>
                             <Switch>
-                                <Route exact path="/">
-                                    <MainContent/>
-                                </Route>
-                                <Route path="/harrypotter">
-                                    <HarrypotterApp/>
-                                </Route>
+                                <Route path="/harrypotter" component={HarrypotterApp}/>
+                                <Route path="/rickandmorty" component={RickandmortyApp}/>
+                                <Route path="/" component={MainContent}/>
                             </Switch>
                         </Suspense>
                     </div>
