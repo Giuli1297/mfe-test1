@@ -1,5 +1,3 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 module.exports = {
     module: {
         rules: [
@@ -19,14 +17,17 @@ module.exports = {
                 use: ['style-loader', 'css-loader'], // Add this rule for CSS files
             },
             {
-              test: /\.json$/,
-              type: 'asset/source', // This handles JSON files, importing them as a string
-            }
+                test: /\.(png|jpg|jpeg|gif|svg)$/i,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {
+                      name: '[name].[hash].[ext]',
+                      outputPath: 'assets/images/', // Output directory for images
+                    },
+                  },
+                ],
+              }
         ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './public/index.html'
-        })
-    ]
+    }
 };

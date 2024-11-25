@@ -42,3 +42,8 @@
     background-color: #1976d2 !important;
     color: white !important;
 }
+
+.header__title--no-link {
+    text-decoration: none;
+    color: inherit;
+}

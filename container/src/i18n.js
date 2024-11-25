@@ -3,11 +3,27 @@ import { initReactI18next } from 'react-i18next';
 
 i18n.use(initReactI18next).init({
     resources: {
-        en: {translation: require('./locales/en/translation.json')},
-        es: {translation: require('./locales/es/translation.json')}
+        en: {
+            translation: {
+                "title": "Curius Characters!",
+                "mainTitle": "Discover Characters in Your Favorite Series",
+                "mainText": "Dive into the magical world of Harry Potter or explore the interdimensional adventures of Rick and Morty!"
+            }
+        },
+        es: {
+            translation: {
+                "title": "Personajes Curiosos!",
+                "mainTitle": "Descubre Personajes en tu Serie Favorita",
+                "mainText": "¡Sumérgete en el mundo mágico de Harry Potter o explora las aventuras interdimensionales de Rick y Morty!"
+            }
+        }
     },
-    lng: 'es',
-    fallbackLng: 'es',
+    keySeparator: false,
+    lng: 'en',
+    fallbackLng: 'en',
+    react: {
+        useSuspense: true
+    },
     interpolation: {
         escapeValue: false
     }

@@ -1,9 +1,15 @@
-import React from 'react';
-import {Router} from 'react-router-dom';
+import React, {lazy, Suspense, useState, useEffect} from "react";
+import {Router, Switch, Route} from 'react-router-dom';
 import {StylesProvider, createGenerateClassName} from '@material-ui/core/styles';
 import {createBrowserHistory} from 'history';
+import { LanguageProvider } from "./components/LanguageContext";
+
 
 import Header from './components/Header/Header';
+import ProgressBar from "./components/ProgressBar/ProgressBar";
+import MainContent from "./components/mainContent/mainContent";
+
+const HarrypotterApp = lazy(() => import('./components/HarrypotterApp/HarrypotterApp'));
 
 const generateClassName = createGenerateClassName({
     productionPrefix: 'co'
@@ -13,12 +19,24 @@ const history = createBrowserHistory();
 
 export default () => {
     return (
-        <StylesProvider generateClassName={generateClassName}>
-            <Router history={history}>
-                <div>
-                    <Header/>
-                </div>
-            </Router>
-        </StylesProvider>
+        <LanguageProvider>
+            <StylesProvider generateClassName={generateClassName}>
+                <Router history={history}>
+                    <div>
+                        <Header/>
+                        <Suspense fallback={<ProgressBar/>}>
+                            <Switch>
+                                <Route exact path="/">
+                                    <MainContent/>
+                                </Route>
+                                <Route path="/harrypotter">
+                                    <HarrypotterApp/>
+                                </Route>
+                            </Switch>
+                        </Suspense>
+                    </div>
+                </Router>
+            </StylesProvider>
+        </LanguageProvider>
     );
 };

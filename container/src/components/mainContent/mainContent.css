@@ -1,0 +1,46 @@
+.series-characters {
+    text-align: center;
+    padding: 20px;
+}
+
+.series-characters__title {
+    margin-bottom: 16px;
+    font-weight: bold;
+    padding: 50px 0;
+}
+
+.series-characters__text {
+    margin-bottom: 24px;
+    color: #555;
+    padding-bottom: 20px;
+}
+
+.series-characters__actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.series-characters__button {
+    padding: 10px 20px;
+    text-transform: none;
+    font-size: 16px;
+}
+
+.series-characters__button--harry-potter {
+    background-color: #6a1b9a; /* Custom color for Harry Potter */
+    color: white;
+}
+
+.series-characters__button--harry-potter:hover {
+    background-color: #8e24aa;
+}
+
+.series-characters__button--rick-and-morty {
+    background-color: #43a047; /* Custom color for Rick and Morty */
+    color: white;
+}
+
+.series-characters__button--rick-and-morty:hover {
+    background-color: #66bb6a;
+}
