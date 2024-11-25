@@ -1,0 +1,44 @@
+/* Header.css */
+
+/* Block: header */
+.header {
+    background-color: #3f51b5;
+    box-shadow: none;
+}
+
+/* Element: toolbar */
+.header__toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+
+/* Element: menu-button */
+.header__menu-button {
+    margin-right: 16px;
+}
+
+/* Element: title */
+.header__title {
+    font-weight: bold;
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* Element: actions */
+.header__actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Element: action-button */
+.header__action-button {
+    text-transform: none; /* Disable uppercase */
+    font-weight: 500;
+}
+
+.header__action-button--selected {
+    background-color: #1976d2 !important;
+    color: white !important;
+}
