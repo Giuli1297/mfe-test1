@@ -122,33 +122,6 @@ The applications will be available at the following URLs:
 - Harry Potter List: [http://localhost:8081](http://localhost:8081)
 - Rick and Morty List: [http://localhost:8082](http://localhost:8082)
 
-#### Production Mode
-
-To build the applications for production, execute the following commands:
-
-##### Container
-
-```sh
-cd container
-npm run build
-```
-
-##### Harry Potter List
-
-```sh
-cd ../harrypotter-list
-npm run build
-```
-
-##### Rick and Morty List
-
-```sh
-cd ../rickandmorty-list
-npm run build
-```
-
-The built files will be available in the `dist` directory of each application.
-
 ## Project Structure
 
 ```sh
