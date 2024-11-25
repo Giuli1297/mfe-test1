@@ -31,6 +31,10 @@ The JavaScript event loop manages asynchronous operations in a single-threaded e
 
 To prevent excessive API calls, add conditions or dependencies in `useEffect`, ensuring requests are made only when necessary.
 
+**How do you manage the global state? And why in that way?**
+
+In a microfrontend architecture, the global state should be managed in a way that allows each application to access it independently, without relying on shared dependencies like React hooks. This approach enhances isolation between different projects, making it easier to develop, deploy, and maintain individual microfrontends. By decoupling the global state from specific frameworks or libraries, you can achieve better flexibility, scalability, and maintainability across all the microfrontends in the system.
+
 **What is progressive rendering?**
 
 Progressive rendering loads and displays content incrementally as it becomes available. This improves the user experience by reducing perceived load times, often using techniques like lazy loading to prioritize essential content.
